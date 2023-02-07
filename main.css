@@ -135,6 +135,10 @@ h2 {
     font-weight: 800;
 }
 
+#main > p {
+    text-align: center;
+}
+
 .portfolio_cards {
     display: grid;
     gap: 2rem 3rem;
