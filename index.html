@@ -116,12 +116,12 @@
             }
 
             document.querySelectorAll("[data-download]").forEach((el) => {
-                el.addEventListener("click", ({ target }) => {
+                el.addEventListener("click", () => {
                     const link = document.createElement("a");
-                    if (target.dataset.download === "cv-cs") {
+                    if (el.dataset.download === "cv-cs") {
                         link.href = "./PetrChalupa_CV-CS.pdf";
                         link.download = "PetrChalupa_CV.pdf";
-                    } else if (target.dataset.download === "cv-en") {
+                    } else if (el.dataset.download === "cv-en") {
                         link.href = "./PetrChalupa_CV-EN.pdf";
                         link.download = "PetrChalupa_CV.pdf";
                     }

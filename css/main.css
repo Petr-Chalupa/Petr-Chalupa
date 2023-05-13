@@ -154,7 +154,7 @@ nav .links a {
     transition: all 0.25s;
   }
   nav .links a {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 500;
     display: none !important;
     white-space: nowrap;
@@ -292,6 +292,7 @@ main #contact .container_cv {
 }
 main #contact .container_cv p {
   margin: 0.25rem;
+  text-align: center;
 }
 main #contact .container_cv > div {
   display: flex;

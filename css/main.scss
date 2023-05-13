@@ -172,7 +172,7 @@ nav {
             transition: all $anim-duration;
 
             a {
-                font-size: 32px;
+                font-size: 25px;
                 font-weight: 500;
                 display: none !important;
                 white-space: nowrap;
@@ -327,6 +327,7 @@ main {
 
             p {
                 margin: 0.25rem;
+                text-align: center;
             }
 
             > div {
