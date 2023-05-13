@@ -1,0 +1,404 @@
+@import "variables";
+
+// resposivity
+@mixin max-width($threshold) {
+    @media screen and (max-width: $threshold) {
+        @content;
+    }
+}
+
+*,
+:after,
+::before {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $secondary-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7b7a7a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+html,
+body {
+    min-height: 100%;
+    min-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: $bg-color;
+    color: $font-color;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    position: relative;
+    color: $tertiary-color;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        inset: auto auto 0 0;
+        background: currentColor;
+        visibility: hidden;
+        border-radius: $border-radius;
+        transform: scaleX(0);
+        transition: $anim-duration linear;
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &:hover:before,
+    &:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+}
+
+nav {
+    height: $nav-height;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background-color: $primary-color;
+    font-size: clamp(0.75rem, 3vw, 1.5rem);
+    padding: 0.5rem 1em;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+    .hamburger {
+        height: 24px;
+        width: 32px;
+        user-select: none;
+        display: none;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        margin: 0;
+        align-self: center;
+        z-index: 2;
+
+        @include max-width($device-S) {
+            display: block;
+        }
+
+        span {
+            height: 4px;
+            width: 100%;
+            display: block;
+            position: absolute;
+            background: $font-color;
+            border-radius: $border-radius;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: $anim-duration ease-in-out;
+
+            &:nth-child(1) {
+                top: 0px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(2) {
+                top: 10px;
+                transform-origin: left center;
+            }
+
+            &:nth-child(3) {
+                top: 20px;
+                transform-origin: left center;
+            }
+        }
+    }
+
+    .hamburger.open span {
+        &:nth-child(1) {
+            transform: rotate(39deg);
+            top: 0px;
+            left: 1px;
+        }
+
+        &:nth-child(2) {
+            height: 0;
+            width: 0;
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: rotate(-39deg);
+            top: 20px;
+            left: 1px;
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        a {
+            color: $font-color;
+        }
+
+        @include max-width($device-S) {
+            height: 100vh;
+            width: 0;
+            position: absolute;
+            top: $nav-height;
+            right: 0;
+            flex-direction: column;
+            background-color: $primary-color;
+            transition: all $anim-duration;
+
+            a {
+                font-size: 32px;
+                font-weight: 500;
+                display: none !important;
+                white-space: nowrap;
+            }
+        }
+
+        &.open {
+            width: 100vw;
+
+            a {
+                display: flex !important;
+            }
+        }
+    }
+}
+
+main {
+    margin-top: $nav-height;
+    overflow: hidden;
+
+    h2 {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        margin: 0 0 0.5em 0;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    section {
+        padding: 2.5rem 10vw;
+    }
+
+    section:nth-child(2n) {
+        background-color: $primary-color;
+    }
+
+    section:nth-child(3n) {
+        background-color: $secondary-color;
+        color: $font-color-secondary;
+    }
+
+    #about {
+        min-height: calc(100vh - $nav-height);
+        display: flex;
+        flex-direction: column;
+
+        .container {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            @include max-width($device-XS) {
+                display: grid;
+                place-items: center;
+                gap: 0;
+            }
+
+            img {
+                position: relative;
+                height: 50vh;
+                aspect-ratio: 3/4;
+                border-radius: $border-radius;
+
+                @include max-width($device-XS) {
+                    height: 25vh;
+                }
+            }
+
+            p {
+                font-size: clamp(0.75rem, 2vw, 1.5rem);
+                text-align: justify;
+            }
+        }
+    }
+
+    #portfolio {
+        .portfolio_cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem 3rem;
+
+            @include max-width($device-S) {
+                flex-direction: column;
+            }
+
+            @include max-width($device-XS) {
+                gap: 0.75rem;
+            }
+
+            .portfolio_card {
+                flex: 1;
+                display: grid;
+                grid-template-areas: "header header" "desc icon" "link link";
+                gap: 0.75rem 2rem;
+                padding: 0.75rem;
+                background-color: $primary-color;
+                border: 2px solid $font-color;
+                border-radius: $border-radius;
+
+                .portfolio_card_header {
+                    grid-area: header;
+                    margin: 0;
+                    height: fit-content;
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                }
+
+                .portfolio_card_desc {
+                    grid-area: desc;
+                    max-height: 10rem;
+                    margin: 0;
+                    font-style: italic;
+                    overflow-y: auto;
+                }
+
+                .portfolio_card_icon {
+                    --padding: 5px;
+                    grid-area: icon;
+                    height: calc(3em + var(--padding));
+                    width: calc(3em + var(--padding));
+                    padding: var(--padding);
+                    margin-left: auto;
+                    border: 2px solid $font-color;
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .portfolio_card_link {
+                    grid-area: link;
+                    width: fit-content;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                }
+            }
+        }
+    }
+
+    #contact {
+        > p {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .container_cv {
+            display: grid;
+            justify-content: center;
+
+            p {
+                margin: 0.25rem;
+            }
+
+            > div {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    background-color: $primary-color;
+                    color: $font-color;
+                    border: none;
+                    border-radius: $border-radius;
+                    padding: 0.5em;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: $anim-duration ease-in-out;
+
+                    &:hover,
+                    &:focus {
+                        filter: brightness(0.8);
+                        outline: none;
+                    }
+
+                    img {
+                        width: 1.25em;
+                    }
+                }
+            }
+        }
+
+        .contact_icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            a {
+                height: 2.5rem;
+                width: 2.5rem;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &#gmail {
+                    background-image: url("../img/icon-gmail.svg");
+                }
+
+                &#github {
+                    background-image: url("../img/icon-github.svg");
+                    background-size: cover;
+                }
+
+                &#instagram {
+                    background-image: url("../img/icon-instagram.svg");
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    background-color: $primary-color;
+
+    > p {
+        margin: 0;
+    }
+}
