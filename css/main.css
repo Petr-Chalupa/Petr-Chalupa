@@ -162,6 +162,7 @@ nav .links a {
 }
 nav .links.open {
   width: 100vw;
+  padding: 1rem;
 }
 nav .links.open a {
   display: flex !important;
@@ -198,11 +199,10 @@ main #about .container {
   align-items: center;
   gap: 2rem;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   main #about .container {
-    display: grid;
-    place-items: center;
-    gap: 0;
+    flex-direction: column;
+    justify-content: start;
   }
 }
 main #about .container img {
@@ -211,13 +211,13 @@ main #about .container img {
   aspect-ratio: 3/4;
   border-radius: 7px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   main #about .container img {
-    height: 25vh;
+    height: 40vh;
   }
 }
 main #about .container p {
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.75rem);
   text-align: justify;
 }
 main #portfolio .portfolio_cards {
@@ -283,7 +283,7 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_link {
 }
 main #contact > p {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: bold;
 }
 main #contact .container_cv {

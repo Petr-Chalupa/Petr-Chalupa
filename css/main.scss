@@ -181,6 +181,7 @@ nav {
 
         &.open {
             width: 100vw;
+            padding: 1rem;
 
             a {
                 display: flex !important;
@@ -224,10 +225,9 @@ main {
             align-items: center;
             gap: 2rem;
 
-            @include max-width($device-XS) {
-                display: grid;
-                place-items: center;
-                gap: 0;
+            @include max-width($device-S) {
+                flex-direction: column;
+                justify-content: start;
             }
 
             img {
@@ -236,13 +236,13 @@ main {
                 aspect-ratio: 3/4;
                 border-radius: $border-radius;
 
-                @include max-width($device-XS) {
-                    height: 25vh;
+                @include max-width($device-S) {
+                    height: 40vh;
                 }
             }
 
             p {
-                font-size: clamp(0.75rem, 2vw, 1.5rem);
+                font-size: clamp(1rem, 2vw, 1.75rem);
                 text-align: justify;
             }
         }
@@ -317,7 +317,7 @@ main {
     #contact {
         > p {
             text-align: center;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             font-weight: bold;
         }
 
