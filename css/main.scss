@@ -253,6 +253,7 @@ main {
             display: flex;
             justify-content: center;
             gap: 2rem 3rem;
+            color: $font-color;
 
             @include max-width($device-S) {
                 flex-direction: column;

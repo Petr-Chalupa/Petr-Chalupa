@@ -224,6 +224,7 @@ main #portfolio .portfolio_cards {
   display: flex;
   justify-content: center;
   gap: 2rem 3rem;
+  color: #e2e6eb;
 }
 @media screen and (max-width: 720px) {
   main #portfolio .portfolio_cards {
