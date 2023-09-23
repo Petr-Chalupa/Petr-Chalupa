@@ -35,7 +35,7 @@ body {
     min-width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    background-color: $bg-color;
+    background-color: $primary-color;
     color: $font-color;
     margin: 0;
     padding: 0;
@@ -206,10 +206,6 @@ main {
     }
 
     section:nth-child(2n) {
-        background-color: $primary-color;
-    }
-
-    section:nth-child(3n) {
         background-color: $secondary-color;
         color: $font-color-secondary;
     }
@@ -232,12 +228,11 @@ main {
 
             img {
                 position: relative;
-                height: 50vh;
-                aspect-ratio: 3/4;
-                border-radius: $border-radius;
+                height: 30vh;
+                border-radius: 50%;
 
                 @include max-width($device-S) {
-                    height: 40vh;
+                    height: 35vh;
                 }
             }
 
@@ -248,12 +243,32 @@ main {
         }
     }
 
+    #ekdyson {
+        text-align: center;
+
+        .container > div {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            img {
+                --padding: 5px;
+                height: calc(3em + var(--padding));
+                width: calc(3em + var(--padding));
+                padding: var(--padding);
+                background-color: $primary-color;
+                border: 2px solid $primary-color;
+                border-radius: 50%;
+            }
+        }
+    }
+
     #portfolio {
         .portfolio_cards {
             display: flex;
             justify-content: center;
             gap: 2rem 3rem;
-            color: $font-color;
 
             @include max-width($device-S) {
                 flex-direction: column;
@@ -269,7 +284,6 @@ main {
                 grid-template-areas: "header header" "desc icon" "link link";
                 gap: 0.75rem 2rem;
                 padding: 0.75rem;
-                background-color: $primary-color;
                 border: 2px solid $font-color;
                 border-radius: $border-radius;
 
@@ -283,6 +297,7 @@ main {
 
                 .portfolio_card_desc {
                     grid-area: desc;
+                    align-self: center;
                     max-height: 10rem;
                     margin: 0;
                     font-style: italic;
@@ -292,12 +307,17 @@ main {
                 .portfolio_card_icon {
                     --padding: 5px;
                     grid-area: icon;
+                    align-self: center;
                     height: calc(3em + var(--padding));
                     width: calc(3em + var(--padding));
                     padding: var(--padding);
                     margin-left: auto;
                     border: 2px solid $font-color;
                     border-radius: 50%;
+
+                    &.no-padding {
+                        padding: 0;
+                    }
 
                     img {
                         width: 100%;
@@ -306,6 +326,7 @@ main {
 
                 .portfolio_card_link {
                     grid-area: link;
+                    align-self: end;
                     width: fit-content;
                     display: flex;
                     align-items: center;

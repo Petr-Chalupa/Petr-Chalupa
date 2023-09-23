@@ -29,7 +29,7 @@ body {
   min-width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  background-color: #7f8081;
+  background-color: #2d3134;
   color: #e2e6eb;
   margin: 0;
   padding: 0;
@@ -182,9 +182,6 @@ main section {
   padding: 2.5rem 10vw;
 }
 main section:nth-child(2n) {
-  background-color: #2d3134;
-}
-main section:nth-child(3n) {
   background-color: #f0f1f4;
   color: #4c4c4c;
 }
@@ -207,24 +204,40 @@ main #about .container {
 }
 main #about .container img {
   position: relative;
-  height: 50vh;
-  aspect-ratio: 3/4;
-  border-radius: 7px;
+  height: 30vh;
+  border-radius: 50%;
 }
 @media screen and (max-width: 720px) {
   main #about .container img {
-    height: 40vh;
+    height: 35vh;
   }
 }
 main #about .container p {
   font-size: clamp(1rem, 2vw, 1.75rem);
   text-align: justify;
 }
+main #ekdyson {
+  text-align: center;
+}
+main #ekdyson .container > div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+main #ekdyson .container > div img {
+  --padding: 5px;
+  height: calc(3em + var(--padding));
+  width: calc(3em + var(--padding));
+  padding: var(--padding);
+  background-color: #2d3134;
+  border: 2px solid #2d3134;
+  border-radius: 50%;
+}
 main #portfolio .portfolio_cards {
   display: flex;
   justify-content: center;
   gap: 2rem 3rem;
-  color: #e2e6eb;
 }
 @media screen and (max-width: 720px) {
   main #portfolio .portfolio_cards {
@@ -242,7 +255,6 @@ main #portfolio .portfolio_cards .portfolio_card {
   grid-template-areas: "header header" "desc icon" "link link";
   gap: 0.75rem 2rem;
   padding: 0.75rem;
-  background-color: #2d3134;
   border: 2px solid #e2e6eb;
   border-radius: 7px;
 }
@@ -256,6 +268,7 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_header {
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_desc {
   grid-area: desc;
+  align-self: center;
   max-height: 10rem;
   margin: 0;
   font-style: italic;
@@ -264,6 +277,7 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_desc {
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon {
   --padding: 5px;
   grid-area: icon;
+  align-self: center;
   height: calc(3em + var(--padding));
   width: calc(3em + var(--padding));
   padding: var(--padding);
@@ -271,11 +285,15 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon {
   border: 2px solid #e2e6eb;
   border-radius: 50%;
 }
+main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon.no-padding {
+  padding: 0;
+}
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon img {
   width: 100%;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_link {
   grid-area: link;
+  align-self: end;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
