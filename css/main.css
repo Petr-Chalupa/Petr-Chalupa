@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f0f1f4;
+  background-color: #e0e2e8;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -30,7 +30,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   background-color: #2d3134;
-  color: #e2e6eb;
+  color: #f3f4f6;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -68,71 +68,17 @@ nav {
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 3vw;
   z-index: 10;
   background-color: #2d3134;
   font-size: clamp(0.75rem, 3vw, 1.5rem);
   padding: 0.5rem 1em;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
-nav .hamburger {
-  height: 24px;
-  width: 32px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  display: none;
-  transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  margin: 0;
-  align-self: center;
-  z-index: 2;
-}
-@media screen and (max-width: 720px) {
-  nav .hamburger {
-    display: block;
-  }
-}
-nav .hamburger span {
-  height: 4px;
-  width: 100%;
-  display: block;
-  position: absolute;
-  background: #e2e6eb;
-  border-radius: 7px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-nav .hamburger span:nth-child(1) {
-  top: 0px;
-  transform-origin: left center;
-}
-nav .hamburger span:nth-child(2) {
-  top: 10px;
-  transform-origin: left center;
-}
-nav .hamburger span:nth-child(3) {
-  top: 20px;
-  transform-origin: left center;
-}
-nav .hamburger.open span:nth-child(1) {
-  transform: rotate(39deg);
-  top: 0px;
-  left: 1px;
-}
-nav .hamburger.open span:nth-child(2) {
-  height: 0;
-  width: 0;
-  opacity: 0;
-}
-nav .hamburger.open span:nth-child(3) {
-  transform: rotate(-39deg);
-  top: 20px;
-  left: 1px;
+nav img {
+  height: 2rem;
+  border-radius: 50%;
 }
 nav .links {
   display: flex;
@@ -140,32 +86,34 @@ nav .links {
   gap: 1em;
 }
 nav .links a {
-  color: #e2e6eb;
+  color: #f3f4f6;
 }
 @media screen and (max-width: 720px) {
   nav .links {
-    height: 100vh;
-    width: 0;
-    position: absolute;
-    top: 3rem;
-    right: 0;
-    flex-direction: column;
-    background-color: #2d3134;
-    transition: all 0.25s;
-  }
-  nav .links a {
-    font-size: 25px;
-    font-weight: 500;
-    display: none !important;
-    white-space: nowrap;
+    display: none;
   }
 }
-nav .links.open {
-  width: 100vw;
-  padding: 1rem;
+nav button {
+  margin-left: auto;
+  font-size: 1.25rem;
+  background-color: #2d3134;
+  border: 2px solid #e0e2e8;
+  border-radius: 7px;
+  transition: all 0.25s;
 }
-nav .links.open a {
-  display: flex !important;
+nav button a {
+  color: #f3f4f6;
+}
+nav button a::before {
+  display: none;
+}
+nav button:hover {
+  background-color: #f3f4f6;
+  transition: all 0.25s;
+}
+nav button:hover a {
+  color: #403f3f;
+  transition: all 0.25s;
 }
 
 main {
@@ -182,42 +130,31 @@ main section {
   padding: 2.5rem 10vw;
 }
 main section:nth-child(2n) {
-  background-color: #f0f1f4;
-  color: #4c4c4c;
+  background-color: #e0e2e8;
+  color: #403f3f;
 }
 main #about {
   min-height: calc(100vh - 3rem);
   display: flex;
-  flex-direction: column;
-}
-main #about .container {
-  flex: 2;
-  display: flex;
   align-items: center;
-  gap: 2rem;
 }
-@media screen and (max-width: 720px) {
-  main #about .container {
-    flex-direction: column;
-    justify-content: start;
-  }
-}
-main #about .container img {
-  position: relative;
-  height: 30vh;
-  border-radius: 50%;
-}
-@media screen and (max-width: 720px) {
-  main #about .container img {
-    height: 35vh;
-  }
-}
-main #about .container p {
+main #about p {
   font-size: clamp(1rem, 2vw, 1.75rem);
   text-align: justify;
+  line-height: 1.5;
+}
+main #about p span {
+  font-size: 10vw;
+  line-height: 1;
+}
+@media screen and (max-width: 480px) {
+  main #about p span {
+    font-size: inherit;
+  }
 }
 main #ekdyson {
   text-align: center;
+  font-size: larger;
 }
 main #ekdyson .container > div {
   display: grid;
@@ -237,7 +174,8 @@ main #ekdyson .container > div img {
 main #portfolio .portfolio_cards {
   display: flex;
   justify-content: center;
-  gap: 2rem 3rem;
+  flex-wrap: wrap;
+  gap: 1.75rem;
 }
 @media screen and (max-width: 720px) {
   main #portfolio .portfolio_cards {
@@ -253,9 +191,9 @@ main #portfolio .portfolio_cards .portfolio_card {
   flex: 1;
   display: grid;
   grid-template-areas: "header header" "desc icon" "link link";
-  gap: 0.75rem 2rem;
+  gap: 0.75rem 1vw;
   padding: 0.75rem;
-  border: 2px solid #e2e6eb;
+  border: 2px solid #f3f4f6;
   border-radius: 7px;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_header {
@@ -272,7 +210,10 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_desc {
   max-height: 10rem;
   margin: 0;
   font-style: italic;
-  overflow-y: auto;
+  overflow-x: hidden;
+}
+main #portfolio .portfolio_cards .portfolio_card .portfolio_card_desc::-webkit-scrollbar {
+  width: 3px;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon {
   --padding: 5px;
@@ -282,7 +223,7 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon {
   width: calc(3em + var(--padding));
   padding: var(--padding);
   margin-left: auto;
-  border: 2px solid #e2e6eb;
+  border: 2px solid #f3f4f6;
   border-radius: 50%;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon.no-padding {
@@ -300,66 +241,34 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_link {
   align-items: center;
   gap: 0.25rem;
 }
-main #contact > p {
+main #contact .container > p {
   text-align: center;
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: bold;
 }
-main #contact .container_cv {
-  display: grid;
-  justify-content: center;
-}
-main #contact .container_cv p {
-  margin: 0.25rem;
-  text-align: center;
-}
-main #contact .container_cv > div {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-main #contact .container_cv > div button {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: #2d3134;
-  color: #e2e6eb;
-  border: none;
-  border-radius: 7px;
-  padding: 0.5em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.25s ease-in-out;
-}
-main #contact .container_cv > div button:hover, main #contact .container_cv > div button:focus {
-  filter: brightness(0.8);
-  outline: none;
-}
-main #contact .container_cv > div button img {
-  width: 1.25em;
-}
-main #contact .contact_icons {
+main #contact .container .contact_icons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
-main #contact .contact_icons a {
+main #contact .container .contact_icons a {
   height: 2.5rem;
   width: 2.5rem;
   background-position: center;
   background-repeat: no-repeat;
 }
-main #contact .contact_icons a#gmail {
+main #contact .container .contact_icons a#gmail {
   background-image: url("../img/icon-gmail.svg");
 }
-main #contact .contact_icons a#github {
+main #contact .container .contact_icons a#github {
   background-image: url("../img/icon-github.svg");
   background-size: cover;
 }
-main #contact .contact_icons a#instagram {
+main #contact .container .contact_icons a#instagram {
   background-image: url("../img/icon-instagram.svg");
+  background-size: cover;
 }
 
 footer {

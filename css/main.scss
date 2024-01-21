@@ -79,77 +79,17 @@ nav {
     width: 100%;
     position: fixed;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 3vw;
     z-index: 10;
     background-color: $primary-color;
     font-size: clamp(0.75rem, 3vw, 1.5rem);
     padding: 0.5rem 1em;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 
-    .hamburger {
-        height: 24px;
-        width: 32px;
-        user-select: none;
-        display: none;
-        transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
-        margin: 0;
-        align-self: center;
-        z-index: 2;
-
-        @include max-width($device-S) {
-            display: block;
-        }
-
-        span {
-            height: 4px;
-            width: 100%;
-            display: block;
-            position: absolute;
-            background: $font-color;
-            border-radius: $border-radius;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: $anim-duration ease-in-out;
-
-            &:nth-child(1) {
-                top: 0px;
-                transform-origin: left center;
-            }
-
-            &:nth-child(2) {
-                top: 10px;
-                transform-origin: left center;
-            }
-
-            &:nth-child(3) {
-                top: 20px;
-                transform-origin: left center;
-            }
-        }
-    }
-
-    .hamburger.open span {
-        &:nth-child(1) {
-            transform: rotate(39deg);
-            top: 0px;
-            left: 1px;
-        }
-
-        &:nth-child(2) {
-            height: 0;
-            width: 0;
-            opacity: 0;
-        }
-
-        &:nth-child(3) {
-            transform: rotate(-39deg);
-            top: 20px;
-            left: 1px;
-        }
+    img {
+        height: 2rem;
+        border-radius: 50%;
     }
 
     .links {
@@ -162,29 +102,33 @@ nav {
         }
 
         @include max-width($device-S) {
-            height: 100vh;
-            width: 0;
-            position: absolute;
-            top: $nav-height;
-            right: 0;
-            flex-direction: column;
-            background-color: $primary-color;
-            transition: all $anim-duration;
+            display: none;
+        }
+    }
 
-            a {
-                font-size: 25px;
-                font-weight: 500;
-                display: none !important;
-                white-space: nowrap;
+    button {
+        margin-left: auto;
+        font-size: 1.25rem;
+        background-color: $primary-color;
+        border: 2px solid $secondary-color;
+        border-radius: $border-radius;
+        transition: all $anim-duration;
+
+        a {
+            color: $font-color;
+
+            &::before {
+                display: none;
             }
         }
 
-        &.open {
-            width: 100vw;
-            padding: 1rem;
+        &:hover {
+            background-color: $font-color;
+            transition: all $anim-duration;
 
             a {
-                display: flex !important;
+                color: $font-color-secondary;
+                transition: all $anim-duration;
             }
         }
     }
@@ -213,38 +157,27 @@ main {
     #about {
         min-height: calc(100vh - $nav-height);
         display: flex;
-        flex-direction: column;
+        align-items: center;
 
-        .container {
-            flex: 2;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+        p {
+            font-size: clamp(1rem, 2vw, 1.75rem);
+            text-align: justify;
+            line-height: 1.5;
 
-            @include max-width($device-S) {
-                flex-direction: column;
-                justify-content: start;
-            }
+            span {
+                font-size: 10vw;
+                line-height: 1;
 
-            img {
-                position: relative;
-                height: 30vh;
-                border-radius: 50%;
-
-                @include max-width($device-S) {
-                    height: 35vh;
+                @include max-width($device-XS) {
+                    font-size: inherit;
                 }
-            }
-
-            p {
-                font-size: clamp(1rem, 2vw, 1.75rem);
-                text-align: justify;
             }
         }
     }
 
     #ekdyson {
         text-align: center;
+        font-size: larger;
 
         .container > div {
             display: grid;
@@ -268,7 +201,8 @@ main {
         .portfolio_cards {
             display: flex;
             justify-content: center;
-            gap: 2rem 3rem;
+            flex-wrap: wrap;
+            gap: 1.75rem;
 
             @include max-width($device-S) {
                 flex-direction: column;
@@ -282,7 +216,7 @@ main {
                 flex: 1;
                 display: grid;
                 grid-template-areas: "header header" "desc icon" "link link";
-                gap: 0.75rem 2rem;
+                gap: 0.75rem 1vw;
                 padding: 0.75rem;
                 border: 2px solid $font-color;
                 border-radius: $border-radius;
@@ -301,7 +235,11 @@ main {
                     max-height: 10rem;
                     margin: 0;
                     font-style: italic;
-                    overflow-y: auto;
+                    overflow-x: hidden;
+
+                    &::-webkit-scrollbar {
+                        width: 3px;
+                    }
                 }
 
                 .portfolio_card_icon {
@@ -337,76 +275,39 @@ main {
     }
 
     #contact {
-        > p {
-            text-align: center;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            font-weight: bold;
-        }
-
-        .container_cv {
-            display: grid;
-            justify-content: center;
-
-            p {
-                margin: 0.25rem;
+        .container {
+            > p {
                 text-align: center;
+                font-size: clamp(1rem, 2vw, 1.25rem);
+                font-weight: bold;
             }
 
-            > div {
+            .contact_icons {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 gap: 1rem;
+                margin-top: 1rem;
 
-                button {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.25rem;
-                    background-color: $primary-color;
-                    color: $font-color;
-                    border: none;
-                    border-radius: $border-radius;
-                    padding: 0.5em;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: $anim-duration ease-in-out;
+                a {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    background-position: center;
+                    background-repeat: no-repeat;
 
-                    &:hover,
-                    &:focus {
-                        filter: brightness(0.8);
-                        outline: none;
+                    &#gmail {
+                        background-image: url("../img/icon-gmail.svg");
                     }
 
-                    img {
-                        width: 1.25em;
+                    &#github {
+                        background-image: url("../img/icon-github.svg");
+                        background-size: cover;
                     }
-                }
-            }
-        }
 
-        .contact_icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-
-            a {
-                height: 2.5rem;
-                width: 2.5rem;
-                background-position: center;
-                background-repeat: no-repeat;
-
-                &#gmail {
-                    background-image: url("../img/icon-gmail.svg");
-                }
-
-                &#github {
-                    background-image: url("../img/icon-github.svg");
-                    background-size: cover;
-                }
-
-                &#instagram {
-                    background-image: url("../img/icon-instagram.svg");
+                    &#instagram {
+                        background-image: url("../img/icon-instagram.svg");
+                        background-size: cover;
+                    }
                 }
             }
         }
