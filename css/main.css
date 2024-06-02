@@ -99,6 +99,7 @@ nav button {
   background-color: #2d3134;
   border: 2px solid #e0e2e8;
   border-radius: 7px;
+  padding-top: 0.25rem;
   transition: all 0.25s;
 }
 nav button a {
@@ -231,6 +232,7 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon.no-padding
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon img {
   width: 100%;
+  aspect-ratio: 1;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_link {
   grid-area: link;
