@@ -17,15 +17,10 @@
     <body>
         <header>
             <nav>
-                <img src="./img/favicon.svg" alt="Photo" />
-                <div class="links" id="links">
-                    <a href="#about" class="nav_link">ABOUT ME</a>
-                    <a href="#ekdyson" class="nav_link">EKDYSON</a>
-                    <a href="#portfolio" class="nav_link">PORTFOLIO</a>
-                </div>
-                <button>
-                    <a href="#contact" class="nav_link">CONTACT</a>
-                </button>
+                <a href="#about" class="nav_link">ABOUT ME</a>
+                <a href="#contact" class="nav_link">CONTACT</a>
+                <a href="#portfolio" class="nav_link">PORTFOLIO</a>
+                <a href="#ekdyson" class="nav_link">EKDYSON</a>
             </nav>
         </header>
 
@@ -33,44 +28,27 @@
             <section id="about">
                 <p>
                     <span>Hi,</span>
-                    I'm Petr Chalupa, a programmer from the Czech Republic. Programming is both my hobby and my field of education. I'm constantly trying to improve myself by working on different
-                    projects, including frontend & backend of web applications or programming simple hardware. You can find my contacts below and get in touch with me (I can provide CV upon request).
+                    I'm Petr Chalupa. Programming is both my hobby and my field of education. I'm constantly trying to improve myself by working on different projects, including frontend & backend of
+                    web applications or programming simple hardware. You can find my contacts below and get in touch with me.
                 </p>
             </section>
 
-            <section id="ekdyson">
-                <h2>Ekdyson</h2>
-                <div class="container" data-aos="fade-up">
-                    <p>
-                        I'm part of a small dev team called Ekdyson. You can look at our GitHub page via the link below. We've also participated twice in the
-                        <a href="https://www.soc.cz" target="_blank">SOČ</a> competition.
-                    </p>
-                    <div>
-                        <a href="https://github.com/Ekdyson-Dev" rel="noopener" target="_blank">GitHub of Ekdyson</a>
-                        <img alt="Ekdyson icon" src="./img/icon-ekdyson.webp" />
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="container">
+                    <div class="contact_icons">
+                        <a href="mailto:chalupapetr77@gmail.com" rel="noopener" target="_blank" id="gmail"></a>
+                        <a href="https://github.com/Petr-Chalupa" rel="noopener" target="_blank" id="github"></a>
+                        <a href="https://www.instagram.com/_petr_chalupa_" rel="noopener" target="_blank" id="instagram"></a>
                     </div>
+                    <p>I can provide CV upon request</p>
                 </div>
             </section>
 
             <section id="portfolio">
                 <h2>Portfolio</h2>
+                <h3 data-aos="fade-up">Work</h3>
                 <div class="portfolio_cards">
-                    <article class="portfolio_card" data-aos="fade-up">
-                        <h5 class="portfolio_card_header">DTA - Digital Text Anchors</h5>
-                        <div class="portfolio_card_icon no-padding">
-                            <img alt="Portfolio card icon" src="./img/icon-dta.svg" />
-                        </div>
-                        <p class="portfolio_card_desc">JS/TS library for manipulating text anchors</p>
-                        <a href="https://www.npmjs.com/package/dynamic-text-anchors" rel="noopener" target="_blank" class="portfolio_card_link">npmjs.com</a>
-                    </article>
-                    <article class="portfolio_card" data-aos="fade-up">
-                        <h5 class="portfolio_card_header">EKDYSON - DEH</h5>
-                        <div class="portfolio_card_icon">
-                            <img alt="Portfolio card icon" src="./img/icon-ekdyson.webp" />
-                        </div>
-                        <p class="portfolio_card_desc">Online system for creating and browsing textbooks and articles. Created by the Ekdyson team as a digital learning tool.</p>
-                        <a href="https://ekdyson-dev.github.io/DEH-web" rel="noopener" target="_blank" class="portfolio_card_link">ekdyson-dev.github.io</a>
-                    </article>
                     <article class="portfolio_card" data-aos="fade-up">
                         <h5 class="portfolio_card_header">Apartmán Petr</h5>
                         <div class="portfolio_card_icon">
@@ -78,14 +56,6 @@
                         </div>
                         <p class="portfolio_card_desc">Website for an apartment in Germany</p>
                         <a href="https://apartmanpetr.eu" rel="noopener" target="_blank" class="portfolio_card_link">apartmanpetr.eu</a>
-                    </article>
-                    <article class="portfolio_card" data-aos="fade-up">
-                        <h5 class="portfolio_card_header">CatFlix</h5>
-                        <div class="portfolio_card_icon no-padding">
-                            <img alt="Portfolio card icon" src="./img/icon-catflix.svg" />
-                        </div>
-                        <p class="portfolio_card_desc">The perfect tool for managing what to watch with your cat...</p>
-                        <a href="https://catflix.onrender.com" rel="noopener" target="_blank" class="portfolio_card_link">catflix.onrender.com</a>
                     </article>
                     <article class="portfolio_card" data-aos="fade-up">
                         <h5 class="portfolio_card_header">ELCARMONT WEB</h5>
@@ -104,16 +74,53 @@
                         <a href="https://www.fd.cvut.cz" rel="noopener" target="_blank" class="portfolio_card_link">fd.cvut.cz</a>
                     </article>
                 </div>
+                <h3 data-aos="fade-up">Personal</h3>
+                <div class="portfolio_cards">
+                    <article class="portfolio_card" data-aos="fade-up">
+                        <h5 class="portfolio_card_header">DTA - Digital Text Anchors</h5>
+                        <div class="portfolio_card_icon no-padding">
+                            <img alt="Portfolio card icon" src="./img/icon-dta.svg" />
+                        </div>
+                        <p class="portfolio_card_desc">JS/TS library for manipulating text anchors</p>
+                        <a href="https://www.npmjs.com/package/dynamic-text-anchors" rel="noopener" target="_blank" class="portfolio_card_link">npmjs.com</a>
+                    </article>
+                    <article class="portfolio_card" data-aos="fade-up">
+                        <h5 class="portfolio_card_header">EKDYSON - DEH</h5>
+                        <div class="portfolio_card_icon">
+                            <img alt="Portfolio card icon" src="./img/icon-ekdyson.webp" />
+                        </div>
+                        <p class="portfolio_card_desc">Online system for creating and browsing textbooks and articles. Created by the Ekdyson team as a digital learning tool.</p>
+                        <a href="https://ekdyson-dev.github.io/DEH-web" rel="noopener" target="_blank" class="portfolio_card_link">ekdyson-dev.github.io</a>
+                    </article>
+                    <!-- <article class="portfolio_card" data-aos="fade-up">
+                        <h5 class="portfolio_card_header">CatFlix</h5>
+                        <div class="portfolio_card_icon no-padding">
+                            <img alt="Portfolio card icon" src="./img/icon-catflix.svg" />
+                        </div>
+                        <p class="portfolio_card_desc">The perfect tool for managing what to watch with your cat...</p>
+                        <a href="https://catflix.onrender.com" rel="noopener" target="_blank" class="portfolio_card_link">catflix.onrender.com</a>
+                    </article> -->
+                    <!-- <article class="portfolio_card" data-aos="fade-up">
+                        <h5 class="portfolio_card_header">Event Bot</h5>
+                        <div class="portfolio_card_icon no-padding">
+                            <img alt="Portfolio card icon" src="" />
+                        </div>
+                        <p class="portfolio_card_desc">A Discord bot...</p>
+                        <a href="" rel="noopener" target="_blank" class="portfolio_card_link">?</a>
+                    </article> -->
+                </div>
             </section>
 
-            <section id="contact">
-                <h2>Contact</h2>
+            <section id="ekdyson">
+                <h2>Ekdyson</h2>
                 <div class="container">
-                    <p>Here are the ways you can contact me</p>
-                    <div class="contact_icons">
-                        <a href="mailto:chalupapetr77@gmail.com" rel="noopener" target="_blank" id="gmail"></a>
-                        <a href="https://github.com/Petr-Chalupa" rel="noopener" target="_blank" id="github"></a>
-                        <a href="https://www.instagram.com/_petr_chalupa_" rel="noopener" target="_blank" id="instagram"></a>
+                    <p>
+                        I'm part of a small dev team called Ekdyson. You can look at our GitHub page via the link below. We've also participated twice in the
+                        <a href="https://www.soc.cz" target="_blank">SOČ</a> competition and won in 2024!
+                    </p>
+                    <div>
+                        <a href="https://github.com/Ekdyson-Dev" rel="noopener" target="_blank">GitHub of Ekdyson</a>
+                        <img alt="Ekdyson icon" src="./img/icon-ekdyson.webp" />
                     </div>
                 </div>
             </section>
@@ -126,34 +133,6 @@
         <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script type="text/javascript">
             AOS.init();
-
-            const elHam = document.getElementById("hamburger");
-            const elLinks = document.getElementById("links");
-            function toggleMenu() {
-                elHam.classList.toggle("open");
-                elLinks.classList.toggle("open");
-            }
-            function toggleMenuDis() {
-                if (!elHam.classList.contains("open")) return;
-                setTimeout(() => {
-                    elHam.classList.remove("open");
-                    elLinks.classList.remove("open");
-                }, 200);
-            }
-
-            document.querySelectorAll("[data-download]").forEach((el) => {
-                el.addEventListener("click", () => {
-                    const link = document.createElement("a");
-                    if (el.dataset.download === "cv-cs") {
-                        link.href = "./PetrChalupa_CV-CS.pdf";
-                        link.download = "PetrChalupa_CV.pdf";
-                    } else if (el.dataset.download === "cv-en") {
-                        link.href = "./PetrChalupa_CV-EN.pdf";
-                        link.download = "PetrChalupa_CV.pdf";
-                    }
-                    link.click();
-                });
-            });
         </script>
     </body>
 </html>
