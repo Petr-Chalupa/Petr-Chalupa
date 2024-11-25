@@ -127,12 +127,13 @@
         </main>
 
         <footer>
-            <p>Petr Chalupa &copy; 2024, All rights reserved</p>
+            <p>Copyright &copy; 2020-<span id="currentYear"></span> Petr Chalupa, All rights reserved</p>
         </footer>
 
         <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script type="text/javascript">
             AOS.init();
+            document.querySelector("#currentYear").innerHTML = new Date().getFullYear();
         </script>
     </body>
 </html>
