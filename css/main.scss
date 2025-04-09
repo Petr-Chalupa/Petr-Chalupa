@@ -116,27 +116,6 @@ main {
         color: $font-color-secondary;
     }
 
-    #about {
-        min-height: calc(100vh - $nav-height);
-        display: flex;
-        align-items: center;
-
-        p {
-            font-size: clamp(1rem, 2vw, 1.75rem);
-            text-align: justify;
-            line-height: 1.5;
-
-            span {
-                font-size: 10vw;
-                line-height: 1;
-
-                @include max-width($device-XS) {
-                    font-size: inherit;
-                }
-            }
-        }
-    }
-
     #contact {
         .container {
             > p {
@@ -264,7 +243,7 @@ main {
         }
     }
 
-    #ekdyson {
+    #soc {
         text-align: center;
         font-size: larger;
 

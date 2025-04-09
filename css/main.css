@@ -102,25 +102,6 @@ main section:nth-child(2n) {
   background-color: #e0e2e8;
   color: #403f3f;
 }
-main #about {
-  min-height: calc(100vh - 3rem);
-  display: flex;
-  align-items: center;
-}
-main #about p {
-  font-size: clamp(1rem, 2vw, 1.75rem);
-  text-align: justify;
-  line-height: 1.5;
-}
-main #about p span {
-  font-size: 10vw;
-  line-height: 1;
-}
-@media screen and (max-width: 480px) {
-  main #about p span {
-    font-size: inherit;
-  }
-}
 main #contact .container > p {
   text-align: center;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -228,17 +209,17 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_link {
   align-items: center;
   gap: 0.25rem;
 }
-main #ekdyson {
+main #soc {
   text-align: center;
   font-size: larger;
 }
-main #ekdyson .container > div {
+main #soc .container > div {
   display: grid;
   justify-items: center;
   align-items: center;
   gap: 0.5rem;
 }
-main #ekdyson .container > div img {
+main #soc .container > div img {
   --padding: 5px;
   height: calc(3em + var(--padding));
   width: calc(3em + var(--padding));
