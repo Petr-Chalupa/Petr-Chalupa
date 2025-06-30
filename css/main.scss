@@ -48,6 +48,7 @@ a {
     color: $tertiary-color;
     cursor: pointer;
     text-decoration: none;
+    word-break: break-all;
 
     &:before {
         content: "";
