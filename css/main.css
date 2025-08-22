@@ -12,25 +12,25 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e0e2e8;
+  background-color: #111111;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7b7a7a;
+  background: #e0f7fa;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: rgb(51.5, 51.5, 51.5);
 }
 
 html,
 body {
   min-height: 100%;
   min-width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Code", "Courier New", monospace;
   font-size: 1rem;
-  background-color: #2d3134;
-  color: #f3f4f6;
+  background-color: #1a1a1a;
+  color: #e0f7fa;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -39,12 +39,35 @@ body {
 
 a {
   position: relative;
-  color: #51b0d2;
-  cursor: pointer;
+  color: #40c4ff;
   text-decoration: none;
   word-break: break-all;
+  cursor: pointer;
+  transition: 0.25s linear;
 }
-a:before {
+a:hover {
+  text-shadow: 0 0 8px #40c4ff;
+}
+
+nav {
+  height: 3rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 10;
+  background-color: #1a1a1a;
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  padding: 0.5rem 1em;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 720px) {
+  nav {
+    justify-content: center;
+  }
+}
+nav a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -56,34 +79,12 @@ a:before {
   transform: scaleX(0);
   transition: 0.25s linear;
 }
-a:hover, a:focus {
+nav a:hover, nav a:focus {
   outline: none;
 }
-a:hover:before, a:focus:before {
+nav a:hover:before, nav a:focus:before {
   visibility: visible;
   transform: scaleX(1);
-}
-
-nav {
-  height: 3rem;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  z-index: 10;
-  background-color: #2d3134;
-  font-size: clamp(0.75rem, 3vw, 1.5rem);
-  padding: 0.5rem 1em;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-}
-@media screen and (max-width: 720px) {
-  nav {
-    justify-content: center;
-  }
-}
-nav a {
-  color: #f3f4f6;
 }
 
 main {
@@ -100,8 +101,8 @@ main section {
   padding: 2.5rem 10vw;
 }
 main section:nth-child(2n) {
-  background-color: #e0e2e8;
-  color: #403f3f;
+  background-color: #111111;
+  color: #a0a0a0;
 }
 main #contact .container > p {
   text-align: center;
@@ -160,8 +161,17 @@ main #portfolio .portfolio_cards .portfolio_card {
   grid-template-areas: "header header" "desc icon" "link link";
   gap: 0.75rem 1vw;
   padding: 0.75rem;
-  border: 2px solid #f3f4f6;
+  background-color: #111;
+  border: 1px solid #40c4ff;
   border-radius: 7px;
+  transition: all 0.3s ease;
+}
+main #portfolio .portfolio_cards .portfolio_card:hover {
+  box-shadow: 0 0 10px #40c4ff;
+  transform: translateY(-1px);
+}
+main #portfolio .portfolio_cards .portfolio_card:hover .portfolio_card_header {
+  color: #40c4ff;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_header {
   grid-area: header;
@@ -191,11 +201,14 @@ main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon {
   width: calc(3em + var(--padding));
   padding: var(--padding);
   margin-left: auto;
-  border: 2px solid #f3f4f6;
+  border: 2px solid #e0f7fa;
   border-radius: 50%;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon.no-padding {
   padding: 0;
+}
+main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon.light {
+  background-color: #e0f7fa;
 }
 main #portfolio .portfolio_cards .portfolio_card .portfolio_card_icon img {
   width: 100%;
@@ -214,6 +227,9 @@ main #soc {
   text-align: center;
   font-size: larger;
 }
+main #soc .container a {
+  text-wrap: nowrap;
+}
 main #soc .container > div {
   display: grid;
   justify-items: center;
@@ -225,8 +241,8 @@ main #soc .container > div img {
   height: calc(3em + var(--padding));
   width: calc(3em + var(--padding));
   padding: var(--padding);
-  background-color: #2d3134;
-  border: 2px solid #2d3134;
+  background-color: #1a1a1a;
+  border: 2px solid #1a1a1a;
   border-radius: 50%;
 }
 
@@ -234,9 +250,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 0.5rem;
-  font-size: clamp(0.75rem, 3vw, 1rem);
-  background-color: #2d3134;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  background-color: #1a1a1a;
 }
 footer > p {
   margin: 0;

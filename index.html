@@ -26,9 +26,9 @@
         <main>
             <section id="portfolio">
                 <h2>Portfolio</h2>
-                <h3 data-aos="fade-up">Work</h3>
+                <h3>Work</h3>
                 <div class="portfolio_cards">
-                    <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">Apartmán Petr</h5>
                         <div class="portfolio_card_icon">
                             <img alt="Portfolio card icon" src="./img/icon-apartmanpetr.svg" />
@@ -36,7 +36,7 @@
                         <p class="portfolio_card_desc">Website for an apartment in Germany</p>
                         <a href="https://apartmanpetr.eu" rel="noopener" target="_blank" class="portfolio_card_link">apartmanpetr.eu</a>
                     </article>
-                    <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">ELCARMONT WEB</h5>
                         <div class="portfolio_card_icon">
                             <img alt="Portfolio card icon" src="./img/icon-elcarmont.svg" />
@@ -44,34 +44,18 @@
                         <p class="portfolio_card_desc">Website of Elcarmot s.r.o.</p>
                         <a href="https://elcarmont.cz" rel="noopener" target="_blank" class="portfolio_card_link">elcarmont.cz</a>
                     </article>
-                    <article class="portfolio_card" data-aos="fade-up">
-                        <h5 class="portfolio_card_header">FD ČVUT - AirTracker</h5>
-                        <div class="portfolio_card_icon no-padding">
-                            <img alt="Portfolio card icon" src="./img/icon-cvut.svg" />
-                        </div>
-                        <p class="portfolio_card_desc">SW & HW for AirTracker system</p>
-                        <a href="https://www.fd.cvut.cz" rel="noopener" target="_blank" class="portfolio_card_link">fd.cvut.cz</a>
-                    </article>
                 </div>
-                <h3 data-aos="fade-up">Personal</h3>
+                <h3>Personal</h3>
                 <div class="portfolio_cards">
-                    <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">DTA - Digital Text Anchors</h5>
-                        <div class="portfolio_card_icon no-padding">
+                        <div class="portfolio_card_icon no-padding light">
                             <img alt="Portfolio card icon" src="./img/icon-dta.svg" />
                         </div>
-                        <p class="portfolio_card_desc">JS/TS library for manipulating text anchors</p>
+                        <p class="portfolio_card_desc">TS library for manipulating anchors in dynamic text</p>
                         <a href="https://www.npmjs.com/package/dynamic-text-anchors" rel="noopener" target="_blank" class="portfolio_card_link">npmjs.com</a>
                     </article>
-                    <article class="portfolio_card" data-aos="fade-up">
-                        <h5 class="portfolio_card_header">DEH</h5>
-                        <div class="portfolio_card_icon">
-                            <img alt="Portfolio card icon" src="./img/icon-ekdyson.webp" />
-                        </div>
-                        <p class="portfolio_card_desc">Online system for creating and browsing textbooks and articles. Created by the Ekdyson team as a digital learning tool.</p>
-                        <a href="https://ekdyson-dev.github.io/DEH-web" rel="noopener" target="_blank" class="portfolio_card_link">ekdyson-dev.github.io</a>
-                    </article>
-                    <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">2D Game Engine</h5>
                         <div class="portfolio_card_icon">
                             <img alt="Portfolio card icon" src="./img/icon-jtileengine.png" />
@@ -79,7 +63,7 @@
                         <p class="portfolio_card_desc">2D game engine written in Java as a semester project</p>
                         <a href="https://github.com/Petr-Chalupa/JTileEngine" rel="noopener" target="_blank" class="portfolio_card_link">github.com/Petr-Chalupa/JTileEngine</a>
                     </article>
-                    <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">FEL - codes</h5>
                         <div class="portfolio_card_icon no-padding">
                             <img alt="Portfolio card icon" src="./img/icon-cvut.svg" />
@@ -87,7 +71,15 @@
                         <p class="portfolio_card_desc">Repository of my codes from labs & homeworks & projects. It contains codes in various languages - C, Python etc.</p>
                         <a href="https://github.com/Petr-Chalupa/FEL" rel="noopener" target="_blank" class="portfolio_card_link">github.com/Petr-Chalupa/FEL</a>
                     </article>
-                    <!-- <article class="portfolio_card" data-aos="fade-up">
+                    <article class="portfolio_card">
+                        <h5 class="portfolio_card_header">DEH</h5>
+                        <div class="portfolio_card_icon">
+                            <img alt="Portfolio card icon" src="./img/icon-ekdyson.webp" />
+                        </div>
+                        <p class="portfolio_card_desc">Online system for creating and browsing textbooks and articles. Created by the Ekdyson team as a digital learning tool.</p>
+                        <a href="https://ekdyson-dev.github.io/DEH-web" rel="noopener" target="_blank" class="portfolio_card_link">ekdyson-dev.github.io</a>
+                    </article>
+                    <!-- <article class="portfolio_card" >
                         <h5 class="portfolio_card_header">CatFlix</h5>
                         <div class="portfolio_card_icon no-padding">
                             <img alt="Portfolio card icon" src="./img/icon-catflix.svg" />
@@ -130,9 +122,7 @@
             <p>Copyright &copy; 2020-<span id="currentYear"></span> Petr Chalupa, All rights reserved</p>
         </footer>
 
-        <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script type="text/javascript">
-            AOS.init();
             document.querySelector("#currentYear").innerHTML = new Date().getFullYear();
         </script>
     </body>
