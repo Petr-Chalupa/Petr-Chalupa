@@ -4,14 +4,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Petr Chalupa | Personal web" />
-        <meta name="keywords" content="Petr Chalupa, osobní web, personal web, programování, programming, CV, projekty, projects" />
         <meta name="author" content="Petr Chalupa" />
         <meta name="google-site-verification" content="xWl75Y9NWNr8LCotfyllAEocaYP-tI69uitguI8DyF8" />
 
         <title>Petr Chalupa</title>
         <link type="image/svg" rel="icon" href="./img/favicon.svg" />
 
-        <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     </head>
     <body>
@@ -19,14 +18,19 @@
             <nav>
                 <a href="#portfolio" class="nav_link">PORTFOLIO</a>
                 <a href="#contact" class="nav_link">CONTACT</a>
-                <a href="#soc" class="nav_link">SOČ</a>
+                <a href="#tech" class="nav_link">TECHNOLOGIES</a>
             </nav>
         </header>
 
         <main>
+            <section id="me">
+                <h2>Me</h2>
+                <p>Based in Prague, Czech Republic; interested in both software & hardware; open for collaboration</p>
+            </section>
+
             <section id="portfolio">
                 <h2>Portfolio</h2>
-                <h3>Work</h3>
+                <h3>Professional</h3>
                 <div class="portfolio_cards">
                     <article class="portfolio_card">
                         <h5 class="portfolio_card_header">Apartmán Petr</h5>
@@ -48,6 +52,17 @@
                 <h3>Personal</h3>
                 <div class="portfolio_cards">
                     <article class="portfolio_card">
+                        <h5 class="portfolio_card_header">Catelog</h5>
+                        <div class="portfolio_card_icon no-padding">
+                            <img alt="Portfolio card icon" src="./img/icon-catelog.svg" />
+                        </div>
+                        <p class="portfolio_card_desc">
+                            When you like watching movies with your cat... <br />
+                            <i>The project is currently in progress</i>
+                        </p>
+                        <a href="https://github.com/Petr-Chalupa/Catelog" rel="noopener" target="_blank" class="portfolio_card_link">github.com</a>
+                    </article>
+                    <article class="portfolio_card">
                         <h5 class="portfolio_card_header">DTA - Dynamic Text Anchors</h5>
                         <div class="portfolio_card_icon no-padding light">
                             <img alt="Portfolio card icon" src="./img/icon-dta.svg" />
@@ -61,7 +76,7 @@
                             <img alt="Portfolio card icon" src="./img/icon-jtileengine.png" />
                         </div>
                         <p class="portfolio_card_desc">2D game engine written in Java as a semester project</p>
-                        <a href="https://github.com/Petr-Chalupa/JTileEngine" rel="noopener" target="_blank" class="portfolio_card_link">github.com/Petr-Chalupa/JTileEngine</a>
+                        <a href="https://github.com/Petr-Chalupa/JTileEngine" rel="noopener" target="_blank" class="portfolio_card_link">github.com</a>
                     </article>
                     <article class="portfolio_card">
                         <h5 class="portfolio_card_header">FEL - codes</h5>
@@ -69,7 +84,7 @@
                             <img alt="Portfolio card icon" src="./img/icon-cvut.svg" />
                         </div>
                         <p class="portfolio_card_desc">Repository of my codes from labs & homeworks & projects. It contains codes in various languages - C, Python etc.</p>
-                        <a href="https://github.com/Petr-Chalupa/FEL" rel="noopener" target="_blank" class="portfolio_card_link">github.com/Petr-Chalupa/FEL</a>
+                        <a href="https://github.com/Petr-Chalupa/FEL" rel="noopener" target="_blank" class="portfolio_card_link">github.com</a>
                     </article>
                     <article class="portfolio_card">
                         <h5 class="portfolio_card_header">DEH</h5>
@@ -79,14 +94,6 @@
                         <p class="portfolio_card_desc">Online system for creating and browsing textbooks and articles. Created by the Ekdyson team as a digital learning tool.</p>
                         <a href="https://ekdyson-dev.github.io/DEH-web" rel="noopener" target="_blank" class="portfolio_card_link">ekdyson-dev.github.io</a>
                     </article>
-                    <!-- <article class="portfolio_card" >
-                        <h5 class="portfolio_card_header">CatFlix</h5>
-                        <div class="portfolio_card_icon no-padding">
-                            <img alt="Portfolio card icon" src="./img/icon-catflix.svg" />
-                        </div>
-                        <p class="portfolio_card_desc">The perfect tool for managing what to watch with your cat...</p>
-                        <a href="https://catflix.onrender.com" rel="noopener" target="_blank" class="portfolio_card_link">catflix.onrender.com</a>
-                    </article> -->
                 </div>
             </section>
 
@@ -102,28 +109,19 @@
                 </div>
             </section>
 
-            <section id="soc">
-                <h2>SOČ</h2>
+            <section id="tech">
+                <h2>Technologies</h2>
                 <div class="container">
-                    <p>
-                        Me and my team have participated twice in the
-                        <a href="https://www.soc.cz" target="_blank">SOČ</a>
-                        competition and won in 2024!
-                    </p>
-                    <div>
-                        <a href="https://github.com/Ekdyson-Dev" rel="noopener" target="_blank">GitHub of Ekdyson</a>
-                        <img alt="Ekdyson icon" src="./img/icon-ekdyson.webp" />
-                    </div>
+                    <div>JS, TS, NodeJS, VueJS</div>
+                    <div>HTML</div>
+                    <div>CSS</div>
+                    <div>C</div>
+                    <div>Java</div>
+                    <div>Python</div>
+                    <div>Bash</div>
+                    <div>Git</div>
                 </div>
             </section>
         </main>
-
-        <footer>
-            <p>Copyright &copy; 2020-<span id="currentYear"></span> Petr Chalupa, All rights reserved</p>
-        </footer>
-
-        <script type="text/javascript">
-            document.querySelector("#currentYear").innerHTML = new Date().getFullYear();
-        </script>
     </body>
 </html>

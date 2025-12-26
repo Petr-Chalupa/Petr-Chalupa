@@ -1,10 +1,16 @@
-@import "variables";
+:root {
+    /* COLOR VARIABLES */
+    --primary-color: #1a1a1a;
+    --primary-color-opacity: #3236439b;
+    --secondary-color: #111111;
+    --ternary-color: #40c4ff;
+    --font-color: #e0f7fa;
+    --font-color-secondary: #a0a0a0;
 
-// resposivity
-@mixin max-width($threshold) {
-    @media screen and (max-width: $threshold) {
-        @content;
-    }
+    /* OTHER VARIABLES */
+    --border-radius: 7px;
+    --anim-duration: 0.25s;
+    --nav-height: 3rem;
 }
 
 *,
@@ -18,15 +24,15 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: $secondary-color;
+    background-color: var(--secondary-color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $font-color;
+    background: var(--font-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: lighten($primary-color, 10%);
+    background: color-mix(in srgb, var(--primary-color), white 10%);
 }
 
 html,
@@ -35,8 +41,8 @@ body {
     min-width: 100%;
     font-family: "Fira Code", "Courier New", monospace;
     font-size: 1rem;
-    background-color: $primary-color;
-    color: $font-color;
+    background-color: var(--primary-color);
+    color: var(--font-color);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -45,33 +51,29 @@ body {
 
 a {
     position: relative;
-    color: $ternary-color;
+    color: var(--ternary-color);
     text-decoration: none;
     word-break: break-all;
     cursor: pointer;
-    transition: $anim-duration linear;
+    transition: text-shadow var(--anim-duration) linear;
 
     &:hover {
-        text-shadow: 0 0 8px $ternary-color;
+        text-shadow: 0 0 8px var(--ternary-color);
     }
 }
 
 nav {
-    height: $nav-height;
+    height: var(--nav-height);
     width: 100%;
     position: fixed;
     display: flex;
     align-items: center;
     gap: 2rem;
     z-index: 10;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     font-size: clamp(1rem, 3vw, 1.75rem);
     padding: 0.5rem 1em;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-
-    @include max-width($device-S) {
-        justify-content: center;
-    }
 
     a {
         &:before {
@@ -82,9 +84,9 @@ nav {
             inset: auto auto 0 0;
             background: currentColor;
             visibility: hidden;
-            border-radius: $border-radius;
+            border-radius: var(--border-radius);
             transform: scaleX(0);
-            transition: $anim-duration linear;
+            transition: var(--anim-duration) linear;
         }
 
         &:hover,
@@ -101,7 +103,7 @@ nav {
 }
 
 main {
-    margin-top: $nav-height;
+    margin-top: var(--nav-height);
 
     h2 {
         font-size: clamp(1.2rem, 3vw, 2rem);
@@ -111,18 +113,21 @@ main {
     }
 
     section {
-        scroll-margin-top: calc($nav-height);
+        scroll-margin-top: calc(var(--nav-height));
         padding: 2.5rem 10vw;
     }
 
-    section:nth-child(2n) {
-        background-color: $secondary-color;
-        color: $font-color-secondary;
+    section:nth-child(odd) {
+        background-color: var(--secondary-color);
+    }
+
+    #me {
+        text-align: center;
     }
 
     #contact {
         .container {
-            > p {
+            >p {
                 text-align: center;
                 font-size: clamp(1rem, 2vw, 1.25rem);
                 font-weight: bold;
@@ -173,46 +178,34 @@ main {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.75rem;
-
-            @include max-width($device-S) {
-                flex-direction: column;
-            }
-
-            @include max-width($device-XS) {
-                gap: 0.75rem;
-            }
+            gap: 1.25rem;
 
             .portfolio_card {
+                position: relative;
                 flex: 1;
+                min-width: 20rem;
                 display: grid;
-                grid-template-areas: "header header" "desc icon" "link link";
                 gap: 0.75rem 1vw;
                 padding: 0.75rem;
                 background-color: #111;
-                border: 1px solid $ternary-color;
-                border-radius: $border-radius;
+                border-radius: var(--border-radius);
                 transition: all 0.3s ease;
 
                 &:hover {
-                    box-shadow: 0 0 10px $ternary-color;
-                    transform: translateY(-1px);
+                    box-shadow: 0 0 10px var(--ternary-color);
 
                     .portfolio_card_header {
-                        color: $ternary-color;
+                        color: var(--ternary-color);
                     }
                 }
 
                 .portfolio_card_header {
-                    grid-area: header;
                     margin: 0;
-                    height: fit-content;
                     font-size: 1.25rem;
                     font-weight: bold;
                 }
 
                 .portfolio_card_desc {
-                    grid-area: desc;
                     align-self: center;
                     max-height: 10rem;
                     min-width: 5rem;
@@ -227,13 +220,13 @@ main {
 
                 .portfolio_card_icon {
                     --padding: 5px;
-                    grid-area: icon;
-                    align-self: center;
-                    height: calc(3em + var(--padding));
-                    width: calc(3em + var(--padding));
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.5rem;
+                    height: calc(2em + var(--padding));
+                    width: calc(2em + var(--padding));
                     padding: var(--padding);
                     margin-left: auto;
-                    border: 2px solid $font-color;
                     border-radius: 50%;
 
                     &.no-padding {
@@ -241,7 +234,7 @@ main {
                     }
 
                     &.light {
-                        background-color: $font-color;
+                        background-color: var(--font-color);
                     }
 
                     img {
@@ -251,7 +244,6 @@ main {
                 }
 
                 .portfolio_card_link {
-                    grid-area: link;
                     align-self: end;
                     width: fit-content;
                     display: flex;
@@ -262,45 +254,52 @@ main {
         }
     }
 
-    #soc {
+    #tech {
         text-align: center;
         font-size: larger;
 
         .container {
-            a {
-                text-wrap: nowrap;
-            }
+            display: flex;
+            place-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
 
-            > div {
-                display: grid;
-                justify-items: center;
-                align-items: center;
-                gap: 0.5rem;
+            >div {
+                border: 1px solid var(--ternary-color);
+                border-radius: var(--border-radius);
+                padding: 0.75rem 1rem;
+                transition: var(--anim-duration) background-color ease-in-out;
+                user-select: none;
+                font-weight: bold;
 
-                img {
-                    --padding: 5px;
-                    height: calc(3em + var(--padding));
-                    width: calc(3em + var(--padding));
-                    padding: var(--padding);
-                    background-color: $primary-color;
-                    border: 2px solid $primary-color;
-                    border-radius: 50%;
+                &:hover {
+                    background-color: var(--ternary-color);
                 }
             }
         }
     }
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0.5rem;
-    font-size: clamp(0.85rem, 3vw, 1rem);
-    background-color: $primary-color;
+@media screen and (max-width: 720px) {
+    nav {
+        justify-content: center;
+    }
 
-    > p {
-        margin: 0;
+    main #portfolio .portfolio_cards {
+        gap: 0.75rem
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        gap: 0.5rem;
+    }
+
+    main section {
+        padding: 1rem;
+    }
+
+    main #portfolio .portfolio_cards {
+        gap: 0.5rem;
     }
 }
