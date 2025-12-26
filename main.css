@@ -156,16 +156,16 @@ main {
                     }
 
                     &#gmail {
-                        background-image: url("../img/icon-gmail.svg");
+                        background-image: url("./img/icon-gmail.svg");
                     }
 
                     &#github {
-                        background-image: url("../img/icon-github.svg");
+                        background-image: url("./img/icon-github.svg");
                         background-size: cover;
                     }
 
                     &#instagram {
-                        background-image: url("../img/icon-instagram.svg");
+                        background-image: url("./img/icon-instagram.svg");
                         background-size: cover;
                     }
                 }
