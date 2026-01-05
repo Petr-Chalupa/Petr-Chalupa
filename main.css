@@ -112,6 +112,17 @@ main {
         font-weight: 800;
     }
 
+    h3 {
+        font-size: clamp(1.15rem, 3vw, 1.75rem);
+        font-weight: 700;
+    }
+
+    h5 {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+
     section {
         scroll-margin-top: calc(var(--nav-height));
         padding: 2.5rem 10vw;
@@ -123,6 +134,10 @@ main {
 
     #me {
         text-align: center;
+
+        >p {
+            font-weight: bold;
+        }
     }
 
     #contact {
@@ -163,11 +178,6 @@ main {
                         background-image: url("./img/icon-github.svg");
                         background-size: cover;
                     }
-
-                    &#instagram {
-                        background-image: url("./img/icon-instagram.svg");
-                        background-size: cover;
-                    }
                 }
             }
         }
@@ -200,8 +210,8 @@ main {
                 }
 
                 .portfolio_card_header {
+                    align-self: center;
                     margin: 0;
-                    font-size: 1.25rem;
                     font-weight: bold;
                 }
 
@@ -243,9 +253,32 @@ main {
                     }
                 }
 
+                .portfolio_card_tags {
+                    grid-column: 1 / -1;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 0.25rem;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    >li {
+                        font-size: 0.75rem;
+                        opacity: 0.85;
+                        border: 1px solid var(--ternary-color);
+                        border-radius: var(--border-radius);
+                        padding: 0.25rem 0.6rem;
+                        white-space: nowrap;
+                        user-select: none;
+                        font-weight: bold;
+                        transition: var(--anim-duration) background-color ease-in-out;
+                    }
+                }
+
                 .portfolio_card_link {
                     grid-column: 1/-1;
-                    align-self: end;
+                    align-self: center;
                     width: fit-content;
                     display: flex;
                     align-items: center;
@@ -259,20 +292,27 @@ main {
         text-align: center;
         font-size: larger;
 
+        h3 {
+            margin: 0;
+        }
+
         .container {
             display: flex;
             place-content: center;
-            gap: 0.5rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
             list-style-type: none;
+            padding: 0;
+            margin: 0.25rem 0 1rem 0;
 
             >li {
                 border: 1px solid var(--ternary-color);
                 border-radius: var(--border-radius);
                 padding: 0.75rem 1rem;
-                transition: var(--anim-duration) background-color ease-in-out;
+                white-space: nowrap;
                 user-select: none;
                 font-weight: bold;
+                transition: var(--anim-duration) background-color ease-in-out;
 
                 &:hover {
                     background-color: var(--ternary-color);
@@ -305,4 +345,3 @@ main {
         gap: 0.5rem;
     }
 }
-

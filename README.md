@@ -1,6 +1,9 @@
-### You can contact me via...
+# Petr Chalupa
 
--   [Email](mailto:chalupapetr77@gmail.com)
--   [IG](https://www.instagram.com/_petr_chalupa_)
+### Contact
+- [Email](mailto:chalupapetr77@gmail.com)
+- I can provide CV upon request
 
-I can provide CV upon request
+### Technologies
+- **Software:** TS, Node.js, Vue.js / HTML, CSS / C / <!-- Rust / -->Python / Java / Bash
+<!-- - **Hardware:** ESP32 / KiCad -->
