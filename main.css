@@ -264,8 +264,9 @@ main {
             place-content: center;
             gap: 0.5rem;
             flex-wrap: wrap;
+            list-style-type: none;
 
-            >div {
+            >li {
                 border: 1px solid var(--ternary-color);
                 border-radius: var(--border-radius);
                 padding: 0.75rem 1rem;
@@ -304,3 +305,4 @@ main {
         gap: 0.5rem;
     }
 }
+
