@@ -22,29 +22,15 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Create dist directory
-              run: mkdir -p dist
-
-            - name: Install Typst
-              uses: typst-community/setup-typst@v3
-
-            - name: Build CV (PDF & HTML)
-              run: |
-                  cd cv
-                  typst compile index.typ ../dist/cv.pdf --root ..
-                  typst compile index.typ ../dist/cv.html --root .. --features html
-
-            - name: Build DOCX (Pandoc)
-              run: |
-                  sudo apt install pandoc -y
-                  pandoc dist/cv.pdf -o dist/cv.docx
-
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: "20"
                   cache: "npm"
                   cache-dependency-path: web/package.json
+
+            - name: Create dist directory
+              run: mkdir -p dist
 
             - name: Install 11ty and Build Web
               run: |
@@ -59,6 +45,18 @@ jobs:
               uses: actions/upload-pages-artifact@v3
               with:
                   path: "./dist"
+
+            - name: Build CV (PDF & HTML)
+              uses: typst-community/setup-typst@v3
+              run: |
+                  cd cv
+                  typst compile index.typ ../dist/cv.pdf --root ..
+                  typst compile index.typ ../dist/cv.html --root .. --features html
+
+            - name: Build DOCX (Pandoc)
+              run: |
+                  sudo apt install pandoc -y
+                  pandoc dist/index.html -o dist/cv.docx
 
     deploy:
         needs: build
