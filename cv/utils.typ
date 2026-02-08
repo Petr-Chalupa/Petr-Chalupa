@@ -43,7 +43,7 @@
 
   text(size: 30pt, weight: "bold", fill: text-primary)[
     #upper()[
-      #underline(firstname, stroke: 3pt + primary-color)
+      #underline(firstname, stroke: 3pt + primary-color, offset: 3pt)
     ]
   ]
   text(size: 30pt, weight: "bold", fill: primary-color)[
