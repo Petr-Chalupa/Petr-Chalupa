@@ -29,8 +29,9 @@ jobs:
 
             - name: Build CV (PDF & HTML)
               run: |
-                  typst compile cv.typ dist/cv.pdf
-                  typst compile cv.typ dist/cv.html
+                  cd cv
+                  typst compile index.typ dist/cv.pdf
+                  typst compile index.typ dist/cv.html
 
             - name: Build DOCX (Pandoc)
               run: |
