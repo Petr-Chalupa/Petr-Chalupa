@@ -8,6 +8,7 @@ on:
             - "data.yaml"
             - "web/**"
             - "*.typ"
+    workflow_dispatch:
 
 permissions:
     contents: read
