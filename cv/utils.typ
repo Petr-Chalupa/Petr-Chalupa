@@ -8,7 +8,7 @@
     margin: 0pt,
   )
   set text(
-    font: "Arial",
+    font: ("Arial", "Liberation Sans", "sans-serif"),
     size: 11pt,
     fill: text-primary,
     lang: "cs",
@@ -61,6 +61,15 @@
   v(0.1em)
   text(fill: current-color)[#body]
   v(2em)
+}
+
+#let contact-item(icon-path, content) = {
+  grid(
+    columns: (auto, 1fr),
+    align: (center + horizon, left),
+    gutter: 5pt,
+    image(icon-path, width: 12pt), content,
+  )
 }
 
 #let entry(content, date) = {

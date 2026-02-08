@@ -12,15 +12,15 @@
       width: 120pt,
       height: 120pt,
       stroke: 2pt + white,
-      image("cv.png", width: 100%, height: 100%, fit: "cover"),
+      image("img/cv.png", width: 100%, height: 100%, fit: "cover"),
     )
     #v(1em)
   ]
 
   #section("Kontakt", light: true)[
-    #link("mailto:" + data.personal.email) \
-    #data.personal.location \
-    #link(data.personal.web)
+    #contact-item("img/email.svg", data.personal.email)
+    #contact-item("img/location.svg", data.personal.location)
+    #contact-item("img/web.svg", link(data.personal.web, data.personal.web.replace("https://", "")))
   ]
 
   #section("Jazyky", light: true)[
@@ -31,10 +31,10 @@
 
   #section("Technologie", light: true)[
     #if data.technologies.software.len() != 0 [
-      *Software:* #data.technologies.software.join(", ")
+      - *Software:* #data.technologies.software.join(", ")
     ] \
     #if data.technologies.hardware.len() != 0 [
-      *Hardware:* #data.technologies.hardware.join(", ")
+      - *Hardware:* #data.technologies.hardware.join(", ")
     ]
   ]
 ]
