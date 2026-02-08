@@ -32,7 +32,7 @@ jobs:
               run: |
                   cd cv
                   typst compile index.typ ../dist/cv.pdf --root ..
-                  typst compile index.typ ../dist/cv.html --root ..
+                  typst compile index.typ ../dist/cv.html --root .. --features html
 
             - name: Build DOCX (Pandoc)
               run: |
