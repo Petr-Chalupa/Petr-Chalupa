@@ -7,7 +7,7 @@
     margin: (x: 1.5cm, y: 1.5cm),
   )
   set text(
-    font: "Arial", // Písmo z původního CV
+    font: "Arial",
     size: 10pt,
     fill: text-gray,
   )
