@@ -30,8 +30,8 @@ jobs:
             - name: Build CV (PDF & HTML)
               run: |
                   cd cv
-                  typst compile index.typ dist/cv.pdf
-                  typst compile index.typ dist/cv.html
+                  typst compile index.typ dist/cv.pdf --root ..
+                  typst compile index.typ dist/cv.html --root ..
 
             - name: Build DOCX (Pandoc)
               run: |
