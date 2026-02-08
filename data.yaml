@@ -1,16 +1,14 @@
 personal:
     name: Petr Chalupa
-    location: Praha, Česká republika
     email: chalupapetr77@gmail.com
-    phone: "+420 775 500 156"
+    location: Praha, Česká republika
     web: https://petr-chalupa.github.io
 
 languages:
     - name: Čeština
-      level:
 
     - name: Angličtina
-      level: C1 (CAE)
+      level: C1, CAE
 
     - name: Němčina
       level: B1
@@ -27,9 +25,9 @@ technologies:
         - Python
         - Java
         - Bash
-    hardware:
-        # - ESP32
-        # - KiCAD
+    hardware: []
+        # -  ESP32
+        # -  KiCAD
 
 portfolio:
     professional:
@@ -37,7 +35,7 @@ portfolio:
           desc: Internal diagnostic PWA for real-time data verification across multiple environments.
           tags: [PWA, API]
           link: "?"
-          icon: icon-sherlog.svg
+          icon: icon-sherlog.png
 
         - title: Apartmán Petr
           desc: Website for an apartment in Germany
@@ -84,43 +82,57 @@ portfolio:
           lightIcon: true
 
 experience:
-    - company: Apartmán Petr
-      role: Vytvoření a správa webu
+    - company: SHERLOG Technology, a.s.
+      role: Full-stack Dev (PWA)
+      desc: Návrh a vývoj interní PWA pro verifikaci dat v terénu
+      from: 2026
+      to: 2026
+
+    - company: Apartmán Petr (Německo)
+      role: Web Dev & Admin
+      desc: Kompletní realizace a dlouhodobá správa webu
       from: 2024
-      to: present
-      tags: [web]
+      to: AKTUÁLNÍ
 
-    - company: SHERLOG Technology
+    - company: SHERLOG Technology, a.s.
       role: Administrativní výpomoc
-      from: 2024-06
-      to: 2024-10
-      tags: [office]
+      desc: Pomoc se správou firemní agendy
+      from: 2024
+      to: 2024
 
-    - company: ELCARMONT
-      role: Vytvoření a správa webu
+    - company: ELCARMONT s.r.o.
+      role: Web Dev & Admin
+      desc: Vývoj a údržba firemního webu
       from: 2021
       to: 2025
-      tags: [web]
 
 education:
-    - school: FEL ČVUT v Praze
+    - school: FEL ČVUT
+      degree: Bc.
       program: Otevřená informatika
+      major: Základy AI a počítačových věd
+      minors: [IoT]
       from: 2024
-      to: present
+      to: AKTUÁLNÍ
 
     - school: Gymnázium Arabská
+      degree: Maturita
       program: Programování
       from: 2020
       to: 2024
 
-courses:
-    - year: 2025
-      name: Pokročilé aplikace umělé inteligence
-      provider: DigiTree
+activities:
+    - name: Kurz - Pokročilé aplikace umělé inteligence
+      desc: DigiTree Education, s.r.o.
+      from: 2025
+      to: 2025
 
 achievements:
-    - year: 2024
-      name: SOČ - 1. místo v celostátním kole
+    - name: SOČ - 1. místo v celostátním kole
+      year: 2024
+      desc: S projektem Digitální učebnicová platforma
 
-    - year: 2023
-      name: SOČ - 5. místo v celostátním kole
+    - name: SOČ - 5. místo v celostátním kole
+      year: 2023
+      desc: S projektem Digitální učebnicová platforma
+      display: false
