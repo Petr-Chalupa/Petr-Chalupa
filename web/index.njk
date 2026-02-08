@@ -41,8 +41,8 @@
                     {% for project in data.portfolio.professional %}
                         <article class="portfolio_card">
                             <h5 class="portfolio_card_header">{{ project.title }}</h5>
-                            <div class="portfolio_card_icon">
-                                <img alt="{{ project.title }} icon" src="{{ project.icon }}" />
+                            <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
+                                <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
                             </div>
                             <p class="portfolio_card_desc">{{ project.desc }}</p>
                             <ul class="portfolio_card_tags">
@@ -60,8 +60,8 @@
                     {% for project in data.portfolio.personal %}
                         <article class="portfolio_card">
                             <h5 class="portfolio_card_header">{{ project.title }}</h5>
-                            <div class="portfolio_card_icon">
-                                <img alt="{{ project.title }} icon" src="{{ project.icon }}" />
+                            <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
+                                <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
                             </div>
                             <p class="portfolio_card_desc">{{ project.desc }}</p>
                             <ul class="portfolio_card_tags">
@@ -82,7 +82,14 @@
                         <a href="https://github.com/Petr-Chalupa" rel="noopener" target="_blank" id="github"></a>
                         <a href="mailto:chalupapetr77@gmail.com" rel="noopener" target="_blank" id="gmail"></a>
                     </div>
-                    <p>I can provide CV upon request</p>
+                    <div class="cv">
+                        <span>Download CV</span>
+                        <div class="cv_links">
+                            <a href="./cv.pdf" target="_blank" class="cv_btn">PDF</a>
+                            <a href="./cv.html" target="_blank" class="cv_btn">HTML</a>
+                            <a href="./cv.docx" download class="cv_btn">DOCX</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 

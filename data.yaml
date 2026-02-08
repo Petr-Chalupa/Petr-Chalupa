@@ -7,7 +7,6 @@ personal:
 
 languages:
     - name: Čeština
-      level: rodilý mluvčí
 
     - name: Angličtina
       level: C1 (CAE)
@@ -33,48 +32,55 @@ technologies:
 
 portfolio:
     professional:
+        - title: SHERLOG Data Lookup
+          desc: Internal diagnostic PWA for real-time data verification across multiple environments.
+          tags: [PWA, API]
+          link: "?"
+          icon: icon-sherlog.svg
+
         - title: Apartmán Petr
           desc: Website for an apartment in Germany
           tags: [Website]
           link: https://apartmanpetr.eu
-          icon: img/icon-apartmanpetr.svg
+          icon: icon-apartmanpetr.svg
 
         - title: ELCARMONT WEB
           desc: Company website for ELCARMONT s.r.o. (2021-2025)
           tags: [Website]
           link: https://elcarmont.cz
-          icon: img/icon-elcarmont.svg
+          icon: icon-elcarmont.svg
 
     personal:
         - title: Catelog
           desc: Movie cataloging app designed for watching films with your cat. Currently in development.
           tags: [OpenAPI, PWA]
           link: https://github.com/Petr-Chalupa/Catelog
-          icon: img/icon-catelog.svg
+          icon: icon-catelog.svg
 
         - title: DTA - Dynamic Text Anchors
           desc: TypeScript library for manipulating anchors in dynamic text.
           tags: [NPM package, Library]
           link: https://www.npmjs.com/package/dynamic-text-anchors
-          icon: img/icon-dta.svg
+          icon: icon-dta.svg
 
         - title: JTileEngine
           desc: 2D game engine written in Java as a university semester project.
           tags: [Desktop app, Game engine]
           link: https://github.com/Petr-Chalupa/JTileEngine
-          icon: img/icon-jtileengine.png
+          icon: icon-jtileengine.png
 
         - title: FEL - codes
           desc: Collection of low-level programming and computer science projects from my studies at CTU. Includes RISC-V assembly, OS internals, PCB design, and networking.
           tags: [University, Computer science]
           link: https://github.com/Petr-Chalupa/FEL
-          icon: img/icon-cvut.svg
+          icon: icon-cvut.svg
 
         - title: DEH
           desc: Online platform for creating and browsing textbooks and articles, developed by the Ekdyson team as a digital learning tool.
           tags: [Web app, Education]
           link: https://github.com/Petr-Chalupa/FEL
-          icon: img/icon-ekdyson.svg
+          icon: icon-ekdyson.webp
+          lightIcon: true
 
 experience:
     - company: Apartmán Petr
