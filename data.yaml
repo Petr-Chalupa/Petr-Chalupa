@@ -52,9 +52,9 @@ portfolio:
 
     personal:
         - title: Catelog
-          desc: Movie cataloging app designed for watching films with your cat. Currently in development.
+          desc: Movie cataloging app designed for watching films with your cat.
           tags: [OpenAPI, PWA]
-          link: https://github.com/Petr-Chalupa/Catelog
+          link: https://catelog-pwa.onrender.com
           icon: icon-catelog.svg
 
         - title: DTA - Dynamic Text Anchors
