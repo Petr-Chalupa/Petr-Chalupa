@@ -1,4 +1,3 @@
-// Barvy podle tvého CV
 #let primary-color = rgb("#003366") // Tmavě modrá pro nadpisy
 #let text-gray = rgb("#444444")
 
