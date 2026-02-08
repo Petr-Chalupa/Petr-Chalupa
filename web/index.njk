@@ -50,7 +50,7 @@
                                     <li>{{ tag }}</li>
                                 {% endfor %}
                             </ul>
-                            <a href="{{ project.link }}" class="portfolio_card_link">Odkaz</a>
+                            <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
                         </article>
                     {% endfor %}
                 </div>
@@ -69,7 +69,7 @@
                                     <li>{{ tag }}</li>
                                 {% endfor %}
                             </ul>
-                            <a href="{{ project.link }}" class="portfolio_card_link">Odkaz</a>
+                            <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
                         </article>
                     {% endfor %}
                 </div>

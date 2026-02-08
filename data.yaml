@@ -40,7 +40,7 @@ portfolio:
           icon: img/icon-apartmanpetr.svg
 
         - title: ELCARMONT WEB
-          desc: Company website for ELCARMONT s.r.o. (2021–2025)
+          desc: Company website for ELCARMONT s.r.o. (2021-2025)
           tags: [Website]
           link: https://elcarmont.cz
           icon: img/icon-elcarmont.svg
@@ -52,7 +52,7 @@ portfolio:
           link: https://github.com/Petr-Chalupa/Catelog
           icon: img/icon-catelog.svg
 
-        - title: DTA – Dynamic Text Anchors
+        - title: DTA - Dynamic Text Anchors
           desc: TypeScript library for manipulating anchors in dynamic text.
           tags: [NPM package, Library]
           link: https://www.npmjs.com/package/dynamic-text-anchors
@@ -64,7 +64,7 @@ portfolio:
           link: https://github.com/Petr-Chalupa/JTileEngine
           icon: img/icon-jtileengine.png
 
-        - title: FEL – codes
+        - title: FEL - codes
           desc: Collection of low-level programming and computer science projects from my studies at CTU. Includes RISC-V assembly, OS internals, PCB design, and networking.
           tags: [University, Computer science]
           link: https://github.com/Petr-Chalupa/FEL
@@ -72,7 +72,9 @@ portfolio:
 
         - title: DEH
           desc: Online platform for creating and browsing textbooks and articles, developed by the Ekdyson team as a digital learning tool.
-          tags: [Web app, Educati]
+          tags: [Web app, Education]
+          link: https://github.com/Petr-Chalupa/FEL
+          icon: img/icon-ekdyson.svg
 
 experience:
     - company: Apartmán Petr
