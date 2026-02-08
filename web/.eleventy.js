@@ -1,17 +1,16 @@
+import fs from "fs";
 import yaml from "js-yaml";
 
 export default function (eleventyConfig) {
-    eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+    const data = yaml.load(fs.readFileSync("../data.yaml", "utf8"));
+    eleventyConfig.addGlobalData("cv", data);
 
     eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy("main.css");
 
-    eleventyConfig.ignores.add("node_modules");
-
     return {
         dir: {
             input: ".",
-            data: ".",
             output: "../dist",
         },
     };
