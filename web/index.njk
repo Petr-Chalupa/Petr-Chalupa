@@ -39,38 +39,42 @@
                 <h3>Professional</h3>
                 <div class="portfolio_cards">
                     {% for project in data.portfolio.professional %}
-                        <article class="portfolio_card">
-                            <h5 class="portfolio_card_header">{{ project.title }}</h5>
-                            <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
-                                <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
-                            </div>
-                            <p class="portfolio_card_desc">{{ project.desc }}</p>
-                            <ul class="portfolio_card_tags">
-                                {% for tag in project.tags %}
-                                    <li>{{ tag }}</li>
-                                {% endfor %}
-                            </ul>
-                            <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
-                        </article>
+                        {% if project.display !== false %}
+                            <article class="portfolio_card">
+                                <h5 class="portfolio_card_header">{{ project.title }}</h5>
+                                <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
+                                    <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
+                                </div>
+                                <p class="portfolio_card_desc">{{ project.desc }}</p>
+                                <ul class="portfolio_card_tags">
+                                    {% for tag in project.tags %}
+                                        <li>{{ tag }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
+                            </article>
+                        {% endif %}
                     {% endfor %}
                 </div>
 
                 <h3>Personal</h3>
                 <div class="portfolio_cards">
-                    {% for project in data.portfolio.personal %}
-                        <article class="portfolio_card">
-                            <h5 class="portfolio_card_header">{{ project.title }}</h5>
-                            <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
-                                <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
-                            </div>
-                            <p class="portfolio_card_desc">{{ project.desc }}</p>
-                            <ul class="portfolio_card_tags">
-                                {% for tag in project.tags %}
-                                    <li>{{ tag }}</li>
-                                {% endfor %}
-                            </ul>
-                            <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
-                        </article>
+                    {% for project in data.portfolio.professional %}
+                        {% if project.display !== false %}
+                            <article class="portfolio_card">
+                                <h5 class="portfolio_card_header">{{ project.title }}</h5>
+                                <div class="portfolio_card_icon {% if project.lightIcon %}light{% endif %}">
+                                    <img alt="{{ project.title }} icon" src="img/{{ project.icon }}" />
+                                </div>
+                                <p class="portfolio_card_desc">{{ project.desc }}</p>
+                                <ul class="portfolio_card_tags">
+                                    {% for tag in project.tags %}
+                                        <li>{{ tag }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{{ project.link }}" class="portfolio_card_link">{{ project.link | domain }}</a>
+                            </article>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </section>

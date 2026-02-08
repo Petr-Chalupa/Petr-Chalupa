@@ -36,6 +36,7 @@ portfolio:
           tags: [PWA, API]
           link: "?"
           icon: icon-sherlog.png
+          display: false
 
         - title: Apartmán Petr
           desc: Website for an apartment in Germany
