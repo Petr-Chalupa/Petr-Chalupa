@@ -195,26 +195,21 @@ main {
                     letter-spacing: 1px;
                 }
 
-                .cv_links {
-                    display: flex;
-                    gap: 15px;
+                .cv_btn {
+                    text-decoration: none;
+                    color: var(--font-color);
+                    background: transparent;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: var(--border-radius);
+                    font-size: 0.85rem;
+                    font-weight: bold;
+                    border: 1px solid var(--ternary-color);
+                    transition: all var(--anim-duration) ease-in-out;
 
-                    .cv_btn {
-                        text-decoration: none;
-                        color: var(--font-color);
-                        background: transparent;
-                        padding: 0.6rem 1.2rem;
-                        border-radius: var(--border-radius);
-                        font-size: 0.85rem;
-                        font-weight: bold;
-                        border: 1px solid var(--ternary-color);
-                        transition: all var(--anim-duration) ease-in-out;
-
-                        &:hover {
-                            background-color: var(--ternary-color);
-                            color: var(--primary-color);
-                            box-shadow: 0 0 10px var(--ternary-color);
-                        }
+                    &:hover {
+                        background-color: var(--ternary-color);
+                        color: var(--primary-color);
+                        box-shadow: 0 0 10px var(--ternary-color);
                     }
                 }
             }
