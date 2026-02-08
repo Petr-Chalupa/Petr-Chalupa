@@ -38,7 +38,7 @@
 
                 <h3>Professional</h3>
                 <div class="portfolio_cards">
-                    {% for project in cv.portfolio.professional %}
+                    {% for project in data.portfolio.professional %}
                         <article class="portfolio_card">
                             <h5 class="portfolio_card_header">{{ project.title }}</h5>
                             <div class="portfolio_card_icon">
@@ -57,7 +57,7 @@
 
                 <h3>Personal</h3>
                 <div class="portfolio_cards">
-                    {% for project in cv.portfolio.personal %}
+                    {% for project in data.portfolio.personal %}
                         <article class="portfolio_card">
                             <h5 class="portfolio_card_header">{{ project.title }}</h5>
                             <div class="portfolio_card_icon">
@@ -92,7 +92,7 @@
                     <h3>Software</h3>
                     <ul class="container">
                         {% for tech in data.technologies.software %}
-                            <li>{{ tech }}{% if not loop.last %}, {% endif %}</li>
+                            <li>{{ tech }}</li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -100,7 +100,7 @@
                     <h3>Hardware</h3>
                     <ul class="container">
                         {% for tech in data.technologies.hardware %}
-                            <li>{{ tech }}{% if not loop.last %}, {% endif %}</li>
+                            <li>{{ tech }}</li>
                         {% endfor %}
                     </ul>
                 </div>
