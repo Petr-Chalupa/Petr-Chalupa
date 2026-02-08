@@ -6,8 +6,6 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy("main.css");
 
-    eleventyConfig.ignores.add("node_modules/**");
-
     return {
         dir: {
             input: ".",
