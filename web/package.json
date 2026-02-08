@@ -1,0 +1,11 @@
+{
+    "name": "web",
+    "author": "Petr Chalupa",
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+        "@11ty/eleventy": "^3.1.2",
+        "js-yaml": "^4.1.1"
+    },
+    "scripts": {}
+}
