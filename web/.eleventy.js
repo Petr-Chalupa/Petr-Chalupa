@@ -3,7 +3,7 @@ import yaml from "js-yaml";
 
 export default function (eleventyConfig) {
     const data = yaml.load(fs.readFileSync("../data.yaml", "utf8"));
-    eleventyConfig.addGlobalData("cv", data);
+    eleventyConfig.addGlobalData("data", data);
 
     eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy("main.css");
