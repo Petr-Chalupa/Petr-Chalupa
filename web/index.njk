@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Petr Chalupa" />
+        <meta name="description" content="Portfolio of a SW & HW dev" />
+        <meta property="og:description" content="Portfolio of a SW & HW dev" />
+        <meta property="og:title" content="Petr Chalupa | Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://petr-chalupa.github.io/Petr-Chalupa" />
+        <meta property="og:image" content="./img/favicon.svg" />
+        <meta name="google-site-verification" content="O2Tsm4IlTxI72PY4cIO5e8KD5w8GzD_WWVllyDn6a_g" />
+
+        <title>Petr Chalupa | Portfolio</title>
+        <link type="image/svg" rel="icon" href="./img/favicon.svg" />
+
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#portfolio" class="nav_link">PORTFOLIO</a>
+                <a href="#contact" class="nav_link">CONTACT</a>
+                <a href="#tech" class="nav_link">TECHNOLOGIES</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="me">
+                <h1 style="display: none">Petr Chalupa - SW & HW developer</h1>
+                <h2>Me</h2>
+                <p>Based in Prague, Czech Republic; interested in both software & hardware; open for collaboration</p>
+            </section>
+
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+
+                <h3>Professional</h3>
+                <div class="portfolio_cards">
+                    {% for project in cv.portfolio.professional %}
+                        <article class="portfolio_card">
+                            <h5 class="portfolio_card_header">{{ project.title }}</h5>
+                            <div class="portfolio_card_icon">
+                                <img alt="{{ project.title }} icon" src="{{ project.icon }}" />
+                            </div>
+                            <p class="portfolio_card_desc">{{ project.desc }}</p>
+                            <ul class="portfolio_card_tags">
+                                {% for tag in project.tags %}
+                                    <li>{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a href="{{ project.link }}" class="portfolio_card_link">Odkaz</a>
+                        </article>
+                    {% endfor %}
+                </div>
+
+                <h3>Personal</h3>
+                <div class="portfolio_cards">
+                    {% for project in cv.portfolio.personal %}
+                        <article class="portfolio_card">
+                            <h5 class="portfolio_card_header">{{ project.title }}</h5>
+                            <div class="portfolio_card_icon">
+                                <img alt="{{ project.title }} icon" src="{{ project.icon }}" />
+                            </div>
+                            <p class="portfolio_card_desc">{{ project.desc }}</p>
+                            <ul class="portfolio_card_tags">
+                                {% for tag in project.tags %}
+                                    <li>{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a href="{{ project.link }}" class="portfolio_card_link">Odkaz</a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="container">
+                    <div class="contact_icons">
+                        <a href="https://github.com/Petr-Chalupa" rel="noopener" target="_blank" id="github"></a>
+                        <a href="mailto:chalupapetr77@gmail.com" rel="noopener" target="_blank" id="gmail"></a>
+                    </div>
+                    <p>I can provide CV upon request</p>
+                </div>
+            </section>
+
+            <section id="tech">
+                <h2>Technologies</h2>
+                <div class="tech-category">
+                    <h3>Software</h3>
+                    <ul class="container">
+                        {% for tech in data.technologies.software %}
+                            <li>{{ tech }}{% if not loop.last %}, {% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h3>Hardware</h3>
+                    <ul class="container">
+                        {% for tech in data.technologies.hardware %}
+                            <li>{{ tech }}{% if not loop.last %}, {% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

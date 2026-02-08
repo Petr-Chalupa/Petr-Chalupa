@@ -1,0 +1,70 @@
+name: Build and Deploy
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "data/data.yml"
+            - "web/**"
+            - "*.typ"
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Create dist directory
+              run: mkdir -p dist
+
+            - name: Install Typst
+              uses: typst-community/setup-typst@v3
+
+            - name: Build CV (PDF & HTML)
+              run: |
+                  typst compile cv.typ dist/cv.pdf
+                  typst compile cv.typ dist/cv.html
+
+            - name: Build DOCX (Pandoc)
+              run: |
+                  sudo apt install pandoc -y
+                  pandoc dist/cv.pdf -o dist/cv.docx
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+                  cache-dependency-path: web/package.json
+
+            - name: Install 11ty and Build Web
+              run: |
+                  cd web
+                  npm install
+                  npx @11ty/eleventy --config=.eleventy.js
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v4
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: "./dist"
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
