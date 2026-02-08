@@ -9,7 +9,7 @@ export default function (eleventyConfig) {
     return {
         dir: {
             input: ".",
-            data: "../",
+            data: "..",
             output: "../dist",
         },
     };
