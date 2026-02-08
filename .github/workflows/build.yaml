@@ -22,19 +22,8 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "20"
-
             - name: Create dist directory
               run: mkdir -p dist
-
-            - name: Install 11ty and Build Web
-              run: |
-                  cd web
-                  npm install
-                  npx @11ty/eleventy --config=.eleventy.js
 
             - name: Install Typst
               uses: typst-community/setup-typst@v3
@@ -48,7 +37,20 @@ jobs:
             - name: Build DOCX (Pandoc)
               run: |
                   sudo apt install pandoc -y
-                  pandoc dist/index.html -o dist/cv.docx
+                  pandoc dist/cv.html -o dist/cv.docx
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+                  cache-dependency-path: web/package.json
+
+            - name: Install 11ty and Build Web
+              run: |
+                  cd web
+                  npm install
+                  npx @11ty/eleventy --config=.eleventy.js
 
             - name: Setup Pages
               uses: actions/configure-pages@v4
