@@ -31,7 +31,7 @@ technologies:
 
 portfolio:
     professional:
-        - title: SHERLOG Data Lookup
+        - title: SHERLOG Search
           desc: Internal diagnostic PWA for real-time data verification across multiple environments.
           tags: [PWA, API]
           link: "https://sherlogsearch.secar.cz"
