@@ -34,9 +34,8 @@ portfolio:
         - title: SHERLOG Data Lookup
           desc: Internal diagnostic PWA for real-time data verification across multiple environments.
           tags: [PWA, API]
-          link: "?"
+          link: "https://sherlogsearch.secar.cz"
           icon: icon-sherlog.png
-          display: false
 
         - title: Apartmán Petr
           desc: Website for an apartment in Germany
@@ -78,7 +77,7 @@ portfolio:
         - title: DEH
           desc: Online platform for creating and browsing textbooks and articles, developed by the Ekdyson team as a digital learning tool.
           tags: [Web app, Education]
-          link: https://github.com/Petr-Chalupa/FEL
+          link: https://github.com/Ekdyson-Dev
           icon: icon-ekdyson.webp
           lightIcon: true
 
