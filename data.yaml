@@ -61,6 +61,7 @@ portfolio:
           tags: [NPM package, Library]
           link: https://www.npmjs.com/package/dynamic-text-anchors
           icon: icon-dta.svg
+          lightIcon: true
 
         - title: JTileEngine
           desc: 2D game engine written in Java as a university semester project.
@@ -79,7 +80,6 @@ portfolio:
           tags: [Web app, Education]
           link: https://github.com/Ekdyson-Dev
           icon: icon-ekdyson.webp
-          lightIcon: true
 
 experience:
     - company: SHERLOG Technology, a.s.
